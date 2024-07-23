@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: Member Seeder
+  main:
+    web-application-type: none
+member-seeder:
+  member-template: examples/ldes-verkeersmeting.nq
+  ldes-server:
+    collection: verkeersmetingen
+  boundaries:
+    inclusive-start: 21100
+    exclusive-end: 21200
