@@ -1,7 +1,6 @@
 package be.vlaanderen.informatievlaanderen.ldes.memberseeder.services;
 
-import be.vlaanderen.informatievlaanderen.ldes.memberseeder.MemberSeeder;
-import be.vlaanderen.informatievlaanderen.ldes.memberseeder.config.MemberSeederConfig;
+import be.vlaanderen.informatievlaanderen.ldes.memberseeder.config.MemberSeederProperties;
 import be.vlaanderen.informatievlaanderen.ldes.memberseeder.entities.Member;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
@@ -11,9 +10,9 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Service
 public class MemberPoster {
 	private final WebClient serverClient;
-	private final MemberSeederConfig config;
+	private final MemberSeederProperties config;
 
-	public MemberPoster(WebClient serverClient, MemberSeederConfig config) {
+	public MemberPoster(WebClient serverClient, MemberSeederProperties config) {
 		this.serverClient = serverClient;
 		this.config = config;
 	}

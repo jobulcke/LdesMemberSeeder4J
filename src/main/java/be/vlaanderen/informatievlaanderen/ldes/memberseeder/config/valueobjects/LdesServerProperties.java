@@ -1,6 +1,6 @@
 package be.vlaanderen.informatievlaanderen.ldes.memberseeder.config.valueobjects;
 
-public class LdesServerConfig {
+public class LdesServerProperties {
 	private String host = "http://localhost:8080";
 	private String collection;
 

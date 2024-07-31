@@ -8,9 +8,9 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class WebClientConfig {
 
 	@Bean
-	public WebClient ldesServerClient(MemberSeederConfig memberSeederConfig) {
+	public WebClient ldesServerClient(MemberSeederProperties memberSeederProperties) {
 		return WebClient.builder()
-				.baseUrl(memberSeederConfig.getLdesServer().getHost())
+				.baseUrl(memberSeederProperties.getLdesServer().getHost())
 				.build();
 	}
 }

@@ -1,12 +1,13 @@
 spring:
-  application:
-    name: Member Seeder
   main:
     web-application-type: none
 member-seeder:
-  member-template: examples/ldes-verkeersmeting.nq
+  member-template: examples/simple-state-object.nq
   ldes-server:
-    collection: verkeersmetingen
+    collection: event-stream
   boundaries:
-    inclusive-start: 21100
-    exclusive-end: 21200
+    inclusive-start: 0
+    exclusive-end: 10000
+  state-object-seeding:
+    enabled: false
+    number-of-members: 100
