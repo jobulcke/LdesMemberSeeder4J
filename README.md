@@ -4,25 +4,28 @@
 
 As part of the development of the [LdesServer4J](https://github.com/Informatievlaanderen/VSDS-LDESServer4J) by
 the [VSDS](https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/vlaamse-smart-data-space) team, we have to
-test our server from time to time by seeding it with (a lot of) LDES members. Therefore, this application has been 
+test our server from time to time by seeding it with (a lot of) LDES members. Therefore, this application has been
 developed, which makes the seeding simpler and more customizable.
 
 ## How to run
 
 ### Configuration properties
 
-This application is very customizable via the following properties:
+This application is very customizable via the following properties.
 
-| Property                                             | Description                                                                                                                                                                                 | Required | Default               | Example               | Supported values                    |
-|------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-----------------------|-----------------------|-------------------------------------|
-| member-seeder.member-template                        | File name or path to the template to use for seeding the members                                                                                                                            | true     | NA                    | example-member.ttl    | Relative and absolute file paths    |
-| member-seeder.boundaries.inclusive-start             | Inclusive start where the seeder can start, this will be used in the id or subject of a member. This property can come in handy when the application is ran multiple times after each other | false    | 0                     | 100                   | Integer value                       |
-| member-seeder.boundaries.exclusive-end               | Exclusive end where the seeder must stop seeding members                                                                                                                                    | false    | 10000                 | 2000                  | Integer value                       |
-| member-seeder.ldes-server.host                       | Host where the LDES server is running                                                                                                                                                       | false    | http://localhost:8080 | http://localhost:8080 | HTTP and HTTPS URLs                 |
-| member-seeder.ldes-server.collection                 | Name of the event stream collection that is running on the LDES server                                                                                                                      | true     | NA                    | event-stream          | String                              |
-| member-seeder.ldes-server.rdf-format                 | Format in which the member must be sent to the LDES server                                                                                                                                  | false    | application/n-quads   | text/turtle           | Any type supported by [Apache Jena] |
-| member-seeder.state-object-seeding.enabled           | Flag that indicates whether state objects or version object must be used                                                                                                                    | false    | false                 | true                  | Boolean value                       |
-| member-seeder.state-object-seeding.number-of-members | Number of state members that will be sent in batch to the LDES server                                                                                                                       | false    | 10                    | 25                    | Integer value                       |
+> [!NOTE]
+> All the properties are prefixed by `member-seeder`
+
+| Property                               | Description                                                                                                                                                                                 | Required | Default               | Example               | Supported values                    |
+|----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-----------------------|-----------------------|-------------------------------------|
+| member-template                        | File name or path to the template to use for seeding the members                                                                                                                            | true     | NA                    | example-member.ttl    | Relative and absolute file paths    |
+| boundaries.inclusive-start             | Inclusive start where the seeder can start, this will be used in the id or subject of a member. This property can come in handy when the application is ran multiple times after each other | false    | 0                     | 100                   | Integer value                       |
+| boundaries.exclusive-end               | Exclusive end where the seeder must stop seeding members                                                                                                                                    | false    | 10000                 | 2000                  | Integer value                       |
+| ldes-server.host                       | Host where the LDES server is running                                                                                                                                                       | false    | http://localhost:8080 | http://localhost:8080 | HTTP and HTTPS URLs                 |
+| ldes-server.collection                 | Name of the event stream collection that is running on the LDES server                                                                                                                      | true     | NA                    | event-stream          | String                              |
+| ldes-server.rdf-format                 | Format in which the member must be sent to the LDES server                                                                                                                                  | false    | application/n-quads   | text/turtle           | Any type supported by [Apache Jena] |
+| state-object-seeding.enabled           | Flag that indicates whether state objects or version object must be used                                                                                                                    | false    | false                 | true                  | Boolean value                       |
+| state-object-seeding.number-of-members | Number of state members that will be sent in batch to the LDES server                                                                                                                       | false    | 10                    | 25                    | Integer value                       |
 
 > [!TIP]
 > By default, a spring application keeps running until killed or crashed. However, this application does not have any
@@ -33,6 +36,7 @@ This application is very customizable via the following properties:
 > ```
 
 #### Example config
+
 ```yaml
 spring:
   main:
