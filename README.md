@@ -3,15 +3,15 @@
 ## Purpose of this application
 
 As part of the development of the [LdesServer4J](https://github.com/Informatievlaanderen/VSDS-LDESServer4J) by
-the [VSDS](https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/vlaamse-smart-data-space) team, we have from
-time to time test our server by seeding it with a lot of LDES members. Therefore, this application has been written,
-which makes the seeding simpler and more customizable.
+the [VSDS](https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/vlaamse-smart-data-space) team, we have to
+test our server from time to time by seeding it with (a lot of) LDES members. Therefore, this application has been 
+developed, which makes the seeding simpler and more customizable.
 
 ## How to run
 
 ### Configuration properties
 
-This application is very customizable, and here are the properties that can be used to customize the application
+This application is very customizable via the following properties:
 
 | Property                                             | Description                                                                                                                                                                                 | Required | Default               | Example               | Supported values                    |
 |------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-----------------------|-----------------------|-------------------------------------|
@@ -26,7 +26,7 @@ This application is very customizable, and here are the properties that can be u
 
 > [!TIP]
 > By default, a spring application keeps running until killed or crashed. However, this application does not have any
-> purpose to keep running after the seeder has completed. To let the application shut down on completion, the following
+> purpose to keep running after the seeder has completed. To shut down the application on completion, the following
 > property can be set:
 > ```properties
 > spring.main.web-application-type=none
