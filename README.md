@@ -27,20 +27,9 @@ This application is very customizable via the following properties.
 | `state-object-seeding.enabled`           | Flag that indicates whether state objects or version object must be used                                                                                                                    | false    | false                 | true                  | Boolean value                       |
 | `state-object-seeding.number-of-members` | Number of state members that will be sent in batch to the LDES server                                                                                                                       | false    | 10                    | 25                    | Integer value                       |
 
-> [!TIP]
-> By default, a spring application keeps running until killed or crashed. However, this application does not have any
-> purpose to keep running after the seeder has completed. To shut down the application on completion, the following
-> property can be set:
-> ```properties
-> spring.main.web-application-type=none
-> ```
-
 #### Example config
 
 ```yaml
-spring:
-  main:
-    web-application-type: none
 member-seeder:
   member-template: examples/simple-state-object.nq
   ldes-server:
