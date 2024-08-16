@@ -4,7 +4,6 @@
 FROM maven:3.9.6-amazoncorretto-21 AS builder
 WORKDIR /seeder
 COPY . .
-RUN rm -f src/main/resources/application.yaml
 RUN mvn install -DskipTests
 
 #
