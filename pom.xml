@@ -10,7 +10,7 @@
     </parent>
     <groupId>be.jobulcke.ldes</groupId>
     <artifactId>ldes-member-seeder</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>LdesMemberSeeder</name>
     <description>LdesMemberSeeder</description>
     <url/>
