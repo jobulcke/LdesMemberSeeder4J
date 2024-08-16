@@ -46,9 +46,8 @@ jobs:
         run: |
           export VERSION=$(mvn help:evaluate -Dexpression="project.version" -q -DforceStdout)
           echo "IMAGE_TAG=$VERSION" >> $GITHUB_ENV
-          echo ${{VERSION}}
           echo ${{ env.IMAGE_TAG }}
-          if [[ "${{ env.IMAGE_TAG }}" != *"SNAPSHOT"* ]]; then
+          if [[ "$VERSION" != *"SNAPSHOT"* ]]; then
             echo "LATEST=latest" >> $GITHUB_ENV
           fi
 
