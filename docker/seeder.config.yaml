@@ -1,0 +1,10 @@
+member-seeder:
+  member-template: /seeder/templates/ldes-member.nq
+  ldes-server:
+    collection: event-stream
+  boundaries:
+    inclusive-start: 0
+    exclusive-end: 10000
+  state-object-seeding:
+    enabled: true
+    number-of-members: 100

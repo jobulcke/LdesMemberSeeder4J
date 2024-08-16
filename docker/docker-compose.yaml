@@ -1,0 +1,7 @@
+services:
+  ldes-member-seeder:
+    container_name: seeder
+    image: ghcr.io/jobulcke/ldes-member-seeder:latest
+    volumes:
+      - ./ldes-member.nq:/seeder/templates/ldes-member.nq:ro
+      - ./seeder.config.yaml:/seeder/application.yaml:ro
