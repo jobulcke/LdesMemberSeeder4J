@@ -36,14 +36,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Install the cosign tool except on PR
-      # https://github.com/sigstore/cosign-installer
-      - name: Install cosign
-        if: github.event_name != 'pull_request'
-        uses: sigstore/cosign-installer@v3.5.0
-        with:
-          cosign-release: 'v2.2.4'
-
       # Set up BuildKit Docker container builder to be able to build
       # multi-platform images and export cache
       # https://github.com/docker/setup-buildx-action
@@ -54,6 +46,7 @@ jobs:
         run: |
           export VERSION=$(mvn help:evaluate -Dexpression="project.version" -q -DforceStdout)
           echo "IMAGE_TAG=$VERSION" >> $GITHUB_ENV
+          echo $VERSION
           echo ${{ env.IMAGE_TAG }}
           if [[ "${{ env.IMAGE_TAG }}" != *"SNAPSHOT"* ]]; then
             echo "LATEST=latest" >> $GITHUB_ENV
