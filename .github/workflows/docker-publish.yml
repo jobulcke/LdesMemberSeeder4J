@@ -49,7 +49,7 @@ jobs:
 
       - name: Define Docker variables
         run: |
-          echo "IMAGE_TAG"=${{ env.version }}
+          echo "IMAGE_TAG"=${{ env.version }} >> $GITHUB_ENV
           if [[ "${{ env.version }}" != *"SNAPSHOT"* ]]; then
             echo "LATEST=latest" >> $GITHUB_ENV
           fi
